@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body,h1 {font-family: "Raleway", Arial, sans-serif}
+h1 {letter-spacing: 6px}
+.w3-row-padding img {margin-bottom: 12px}
+</style>
+<body>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+<!-- Header -->
+<center>  
+<header class="w3-panel w3-center w3-opacity" style="padding:45px 16px">
+
+<h1 class="w3-xlarge">Developer | Maker | Epistemophilic </h1>
+  <h1>Geoffrey Hoffman</h1>
+  
+ </header>
+</center>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+
+    {% if title %}
+        <title>Geoff's Homepage- {{ title }}</title>
+    {% else %}
+        <title>Geoff's Homepage</title>
+    {% endif %}
+</head>
+ {% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+  
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+
+    {% if title %}
+        <title>Geoff's Homepage - {{ title }}</title>
+    {% else %}
+        <title>Geoff's Homepage</title>
+    {% endif %}
+</head>
+<body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Geoff's Homepage</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
+              <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
+              <a class="nav-item nav-link" href="#">Resume</a>
+              <a class="nav-item nav-link" href="#">CVV</a>
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+              {% if user.is_authenticated %}
+                <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
+                <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+              {% else %}
+                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+          {% block content %}{% endblock %}
+        </div>
+        <div class="col-md-4">
+          <div class="content-section">
+            <h3>What's going on!</h3>
+            <p class='text-muted'>Just a bit more about my life.
+              <ul class="list-group">
+		<a class="list-group-item list-group-item-light" href="{% url 'blog-events'%}">Upcoming Events</a>
+		<a class="list-group-item list-group-item-light" href="{% url 'blog-calendar'%}">Calendar</a>
+
+
+ <h5> Links</h5>
+<a class="list-group-item list-group-item-light" href="https://www.nova-labs.org/">NovaLabs</a>
+<a class="list-group-item list-group-item-light" href="https://www.tinkercad.com/users/2Fhrv61SUnC-geofhoffman/">TinkerCad</a>
+<a class="list-group-item list-group-item-light" href="https://github.com/Geof-Hoffman/">GitHub</a>
+<a class="list-group-item list-group-item-light" href="https://www.silverbackacademy.com/">Silverback Academy</a>
+<a class="list-group-item list-group-item-light" href="https://www.youtube.com/user/schafer5/">Corey Shafer's YouTube</a>
+
+<h5> Coming Soon!! </h5>
+<a class="list-group-item list-group-item-light" href="#">Help Feed Freckles-Project</a>
+<a class="list-group-item list-group-item-light" href="#">Hydro-Garden</a>
+<a class="list-group-item list-group-item-light" href="#">SmartHome DIY </a>
+                <li class="list-group-item list-group-item-light">Lots of other cool things!</li>
+
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+<center>
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-28a72dab-93d2-4cb2-8b6e-5981af230995"></div>
+</center>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <!  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>>
+</body>
+</html>
